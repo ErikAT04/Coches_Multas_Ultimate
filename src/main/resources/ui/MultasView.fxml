@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.erikat.crudjavageneral.Scenes.MultasController"
+            prefHeight="400.0" prefWidth="600.0">
+    <children>
+        <Label layoutX="53.0" layoutY="49.0" text="Matrícula:" />
+        <TextField fx:id="matrTField" editable="false" layoutX="128.0" layoutY="46.0" />
+        <TextField fx:id="idTField" layoutX="205.0" layoutY="93.0" prefHeight="27.0" prefWidth="101.0" />
+        <Label layoutX="53.0" layoutY="97.0" text="Identificador de Multa:" />
+        <Label layoutX="73.0" layoutY="140.0" text="Precio:" />
+        <TextField fx:id="precioTField" layoutX="123.0" layoutY="137.0" />
+        <Label layoutX="74.0" layoutY="194.0" text="Fecha:" />
+        <DatePicker fx:id="datePicker" layoutX="124.0" layoutY="190.0" onAction="#onDateChosen" prefHeight="27.0" prefWidth="179.0" />
+        <TableView fx:id="multaTView" layoutX="30.0" layoutY="288.0" onMouseClicked="#onItemPicked" prefHeight="200.0" prefWidth="340.0">
+            <columns>
+                <TableColumn fx:id="idTCol" prefWidth="60.0" text="ID" />
+                <TableColumn fx:id="precioTCol" prefWidth="140.0" text="Precio" />
+                <TableColumn fx:id="fechaTCol" prefWidth="140.0" text="Fecha" />
+            </columns>
+        </TableView>
+        <Button layoutX="30.0" layoutY="247.0" mnemonicParsing="false" onAction="#onInsertarClick" prefWidth="82.0" text="Insertar" />
+        <Button layoutX="116.0" layoutY="247.0" mnemonicParsing="false" onAction="#onActualizarClick" prefHeight="27.0" prefWidth="82.0" text="Actualizar" />
+        <Button layoutX="203.0" layoutY="247.0" mnemonicParsing="false" onAction="#onBorrarClick" prefWidth="82.0" text="Borrar" />
+        <Button layoutX="288.0" layoutY="247.0" mnemonicParsing="false" onAction="#onLimpiarClick" prefWidth="82.0" text="Limpiar" />
+        <Button layoutX="524.0" layoutY="395.0" mnemonicParsing="false" onAction="#onRefresh" text="Refrescar" />
+        <Label layoutX="490.0" layoutY="234.0" text="Elige un gestor de BBDD" />
+        <RadioButton fx:id="mongoRB" layoutX="524.0" layoutY="270.0" mnemonicParsing="false" text="MongoDB">
+            <toggleGroup>
+                <ToggleGroup fx:id="dbGroup" />
+            </toggleGroup>
+        </RadioButton>
+        <RadioButton fx:id="mySQLRB" layoutX="524.0" layoutY="309.0" mnemonicParsing="false" text="MySQL" toggleGroup="$dbGroup" />
+        <RadioButton fx:id="hiberRB" layoutX="524.0" layoutY="348.0" mnemonicParsing="false" text="Hibernate" toggleGroup="$dbGroup" />
+    </children>
+</AnchorPane>

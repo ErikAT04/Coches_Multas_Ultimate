@@ -1,0 +1,27 @@
+.root {
+    -fx-focus-color: #ffffff; /*El color que rodea algún objeto cuando está seleccionado*/
+    -fx-base: #ffffff; /*El color de base, es decir, el que tienen todos los contenedores*/
+    -fx-control-inner-background: derive(-fx-base, 50%); /*El color de fondo de los objetos*/
+    -fx-font-family: "Comic Sans MS";
+    -fx-font-size: 13px;
+}
+.button{
+    -fx-background-color: #CCCCCC;
+    -fx-background-radius:100;
+    -fx-font-weight: bold;
+}
+.button:hover, .combo-box:hover{
+    -fx-background-color: #AAAAAA;
+}
+.list-view .cell:selected, .table-view .cell:selected, .combo-box .cell:hover,.button:pressed, .root .cell:pressed, .combo-box:pressed{
+    -fx-background-color: #555555;
+    -fx-text-fill: #FFFFFF;
+}
+.title-bar .button {
+    -fx-background-color: #555;
+    -fx-text-fill: white;
+    -fx-padding: 10;
+}
+.title-bar .button:hover {
+    -fx-background-color: #777;
+}

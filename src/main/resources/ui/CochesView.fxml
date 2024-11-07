@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="646.0" stylesheets="@styles/mainAppStyle.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.erikat.crudjavageneral.Scenes.CochesController">
+  <children>
+    <TextField fx:id="matrTField" layoutX="147.0" layoutY="51.0" />
+    <TextField fx:id="marcaTField" layoutX="147.0" layoutY="100.0" />
+    <TextField fx:id="modeloTField" layoutX="147.0" layoutY="149.0" />
+    <ComboBox fx:id="tipoCBox" layoutX="147.0" layoutY="198.0" prefWidth="150.0" />
+    <Button layoutX="371.0" layoutY="48.0" mnemonicParsing="false" onAction="#onInsertarClick" prefHeight="31.0" prefWidth="100.0" text="Insertar">
+      <font>
+        <Font size="15.0" />
+      </font>
+    </Button>
+    <Button layoutX="371.0" layoutY="97.0" mnemonicParsing="false" onAction="#onActualizarClick" prefHeight="31.0" prefWidth="100.0" text="Actualizar">
+      <font>
+        <Font size="15.0" />
+      </font>
+    </Button>
+    <Button layoutX="371.0" layoutY="147.0" mnemonicParsing="false" onAction="#onBorrarClick" prefHeight="31.0" prefWidth="100.0" text="Borrar">
+      <font>
+        <Font size="15.0" />
+      </font>
+    </Button>
+    <Button layoutX="371.0" layoutY="197.0" mnemonicParsing="false" onAction="#onLimpiarClick" prefHeight="31.0" prefWidth="100.0" text="Limpiar">
+      <font>
+        <Font size="15.0" />
+      </font>
+    </Button>
+    <TableView fx:id="cochesTView" layoutX="31.0" layoutY="296.0" onMouseClicked="#onContentClicked" prefHeight="200.0" prefWidth="440.0">
+      <columns>
+        <TableColumn fx:id="idTCol" prefWidth="40.0" text="Id" />
+        <TableColumn fx:id="matrTCol" prefWidth="100.0" text="Matrícula" />
+        <TableColumn fx:id="marcaTCol" prefWidth="100.0" text="Marca" />
+        <TableColumn fx:id="modeloTCol" prefWidth="100.0" text="Modelo" />
+        <TableColumn fx:id="tipoTCol" prefWidth="100.0" text="Tipo" />
+      </columns>
+    </TableView>
+    <Button fx:id="multaBtt" layoutX="190.0" layoutY="517.0" mnemonicParsing="false" onAction="#onMultasClick" prefHeight="31.0" prefWidth="131.0" text="Ver Multas">
+      <font>
+        <Font name="System Bold" size="15.0" />
+      </font>
+    </Button>
+    <Label layoutX="69.0" layoutY="101.0" style="-fx-font-size: 18;" text="Marca" />
+    <Label layoutX="46.0" layoutY="52.0" style="-fx-font-size: 18;" text="Matrícula" />
+    <Label layoutX="65.0" layoutY="149.0" style="-fx-font-size: 18;" text="Modelo" />
+    <Label layoutX="88.0" layoutY="199.0" style="-fx-font-size: 18;" text="Tipo" />
+      <Button layoutX="524.0" layoutY="395.0" mnemonicParsing="false" onAction="#onRefresh" text="Refrescar" />
+      <Label layoutX="490.0" layoutY="234.0" text="Elige un gestor de BBDD" />
+      <RadioButton fx:id="mongoRB" layoutX="524.0" layoutY="270.0" mnemonicParsing="false" text="MongoDB">
+         <toggleGroup>
+            <ToggleGroup fx:id="dbGroup" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="mySQLRB" layoutX="524.0" layoutY="309.0" mnemonicParsing="false" text="MySQL" toggleGroup="$dbGroup" />
+      <RadioButton fx:id="hiberRB" layoutX="524.0" layoutY="348.0" mnemonicParsing="false" text="Hibernate" toggleGroup="$dbGroup" />
+      <TextField fx:id="codTField" layoutX="147.0" layoutY="239.0" />
+      <Label layoutX="36.0" layoutY="240.0" style="-fx-font-size: 18;" text="Cod Secreto" />
+  </children>
+</AnchorPane>
