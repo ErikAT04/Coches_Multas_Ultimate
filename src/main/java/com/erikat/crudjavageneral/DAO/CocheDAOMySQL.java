@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+//DAO de coches con MySQL
 public class CocheDAOMySQL implements CocheDAOInterface{
     public Connection con;
     public CocheDAOMySQL(){

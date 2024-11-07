@@ -5,6 +5,8 @@ import java.lang.reflect.Type;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+
+//UTILIZAR SOLO SI PIDE USAR GSON Y LOCALDATE, Y SI NO QUEDA OTRA (No lo pediría)
 public class LocalDateAdapter implements JsonSerializer<LocalDate>, JsonDeserializer<LocalDate> {
     private static final DateTimeFormatter formatter = DateTimeFormatter.ISO_LOCAL_DATE;
 

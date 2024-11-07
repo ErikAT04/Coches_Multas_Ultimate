@@ -38,7 +38,7 @@ public class Coche implements Serializable {
     @Column(name = "codSecreto")
     private String codSecreto;
 
-    @OneToMany(mappedBy = "coche", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "coche", cascade = CascadeType.ALL) //OneToMany: Lo tiene el de la relación 1
     private List<Multa> multas; //Un coche puede tener varias multas
 
     public Coche(String matricula, String marca, String modelo, String tipo, String codSecreto) {

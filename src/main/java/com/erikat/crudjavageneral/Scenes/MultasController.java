@@ -67,7 +67,7 @@ public class MultasController extends Controller{
                 double precio = Double.parseDouble(precioTField.getText());
                 LocalDate fecha = datePicker.getValue();
 
-                Multa multa = listaDAO.get(numRB).buscarMulta(id);
+                Multa multa = multaDAOHibernate.buscarMulta(id);
                 if(multa!=null){
                     Multa multaNueva = new Multa(id, precio, fecha, cocheMultado);
                     for (MultaDAOInterface multaDAO : listaDAO) {
@@ -94,7 +94,7 @@ public class MultasController extends Controller{
         } else {
             try {
                 int id = Integer.parseInt(idTField.getText());
-                Multa multa = listaDAO.get(numRB).buscarMulta(id);
+                Multa multa = multaDAOHibernate.buscarMulta(id);
                 if (multa!=null){
                     Optional<ButtonType> botonPulsado = FXUtils.makeAlert(Alert.AlertType.CONFIRMATION, "¿Quieres borrar esta multa?", "Borrar");
                     if(botonPulsado.isPresent() && botonPulsado.get() == ButtonType.OK){

@@ -7,6 +7,7 @@ import com.mongodb.client.MongoDatabase;
 import java.io.IOException;
 import java.util.Properties;
 
+//Utiles de MongoDB
 public class MongoDBUtils {
     static MongoClient cliente;
     static MongoDatabase database;

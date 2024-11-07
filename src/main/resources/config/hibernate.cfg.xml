@@ -10,6 +10,8 @@
     <property name="connection.password">toor</property> <!--Contraseña-->
     <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property> <!--Dialecto de las sentencias-->
     <property name="hibernate.show_sql">true</property> <!---->
+    <property name="hibernate.jdbc.batch_size">50</property>
+
         <!--<mapping class="com.erikat.hibernate_coches_multas.model.Coche"/>-->
     </session-factory>
 </hibernate-configuration>

@@ -8,6 +8,7 @@ import org.hibernate.Session;
 import java.util.ArrayList;
 import java.util.List;
 
+//DAO de multas con Hibernate: Funca igual que las DAO de coche
 public class MultaDAOHibernate implements MultaDAOInterface{
     Session session;
     public MultaDAOHibernate(){

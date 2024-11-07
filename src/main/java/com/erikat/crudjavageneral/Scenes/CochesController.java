@@ -154,6 +154,7 @@ public class CochesController extends Controller implements Initializable {
             marcaTField.setText(coche.getMarca());
             modeloTField.setText(coche.getModelo());
             tipoCBox.setValue(coche.getTipo());
+            codTField.setText(coche.getCodSecreto());
         }
     }
 
@@ -221,6 +222,7 @@ public class CochesController extends Controller implements Initializable {
         marcaTField.setText("");
         matrTField.setText("");
         modeloTField.setText("");
+        codTField.setText("");
         tipoCBox.setValue(null);
     }
 
@@ -231,8 +233,8 @@ public class CochesController extends Controller implements Initializable {
             case "Hibernate" -> 0;
             case "MongoDB" -> 1;
             default -> 2;
-        };
-        List<Coche> coches = listaDAO.get(numRB).listarCoches();
+        }; //Dependiendo de si se activa uno u otro cambia la posición de la lista DAO:
+        List<Coche> coches = listaDAO.get(numRB).listarCoches(); //Lista los coches según el DAO de la lista
         ObservableList<Coche> listaCoches = FXCollections.observableArrayList(coches);
         cochesTView.setItems(listaCoches);
     }
@@ -244,8 +246,9 @@ public class CochesController extends Controller implements Initializable {
         cocheDAOMySQL = new CocheDAOMySQL();
 
         listaDAO = List.of(cocheDAOHibernate, cocheDAOMongo, cocheDAOMySQL);
+        //Creo una lista con todos los DAO
 
-        mySQLRB.setSelected(true);
+        mySQLRB.setSelected(true); //Selecciono por defecto uno de los radiobutton (Me decanté por el de MySQL)
 
         //Tabla:
         idTCol.setCellValueFactory(new PropertyValueFactory<>("id"));

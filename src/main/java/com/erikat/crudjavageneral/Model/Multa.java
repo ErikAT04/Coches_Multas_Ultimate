@@ -27,7 +27,7 @@ public class Multa implements Serializable {
     @Column(name = "fecha")
     private LocalDate fecha;
 
-    @ManyToOne
+    @ManyToOne //ManyToOne: Lo tiene el de la relación de la N
     @JoinColumn(name = "matricula", referencedColumnName = "matricula")
     private Coche coche;
 
